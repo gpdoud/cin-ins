@@ -1,0 +1,37 @@
+<header>
+    <span>Vendor List</span> | 
+    <a routerLink="/vendor/create">New</a> |
+    <input [(ngModel)]="searchCriteria" placeholder="Search">
+</header>
+
+<main>
+    <table class="table table-sm table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th><a (click)="sortColumnFn('name')">Name</a></th>
+                <th><a (click)="sortColumnFn('code')">Code</a></th>
+                <th><a (click)="sortColumnFn('address')">Address</a></th>
+                <th>City/St/Zip</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let v of vendors | search:searchCriteria | sort:sortColumn:sortAsc">
+                <td>{{ v.id }}</td>
+                <td>{{ v.name }}</td>
+                <td>{{ v.code }}</td>
+                <td>{{ v.address }}</td>
+                <td>{{ v.city }}, {{ v.state | stateCodeToName }} {{ v.zip }}</td>
+                <td>
+                    <a routerLink="/vendor/detail/{{v.id}}">Det</a> | 
+                    <a routerLink="/vendor/change/{{v.id}}">Chg</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</main>
+
+<footer>
+    <span>Create by Greg</span>
+</footer>

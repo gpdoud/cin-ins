@@ -1,0 +1,54 @@
+<header>
+    <span>Vendor Detail</span>
+</header>
+
+<main>
+    <table class="table table-sm table-striped">
+        <tbody>
+            <tr>
+                <td>Id:</td>
+                <td>{{ vendor.id }}</td>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td>{{ vendor.name }}</td>
+            </tr>
+            <tr>
+                <td>Code:</td>
+                <td>{{ vendor.code }}</td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td>{{ vendor.address }}</td>
+            </tr>
+            <tr>
+                <td>City:</td>
+                <td>{{ vendor.city }}</td>
+            </tr>
+            <tr>
+                <td>State:</td>
+                <td>{{ vendor.state }}</td>
+            </tr>
+            <tr>
+                <td>Zip:</td>
+                <td>{{ vendor.zip }}</td>
+            </tr>
+            <tr>
+                <td>Phone:</td>
+                <td>{{ vendor.phone }}</td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td>{{ vendor.email }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button (click)="remove()" class="btn btn-danger">Delete</button>
+    <span *ngIf="showVerifyButton">
+        | <button (click)="verifyRemove()" class="btn btn-danger">Verify Delete</button>
+    </span>
+</main>
+
+<footer>
+    <span>Create by Greg</span>
+</footer>

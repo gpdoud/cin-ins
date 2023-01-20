@@ -1,0 +1,30 @@
+<div>
+  <p>Events</p>
+  <button (click)="alert(123)">Alert</button>
+</div>
+
+<div>
+  <p>[hidden]</p>
+  <label [hidden]="hide">Hide this label</label>
+</div>
+
+<div>
+  <p>[ngClass]</p>
+  <label [ngClass]="clsVals">{{ title }}</label>
+  <!-- <label class="red bold">{{ title }}</label> -->
+</div>
+
+<div>
+  <p>*ngFor</p>
+  <ol>
+    <li *ngFor="let name of names">
+      The name is {{ name.firstname }}.
+    </li>
+  </ol>
+</div>
+
+<div>
+  <p>*ngIf</p>
+  <label *ngIf="displayTitle">{{ title }}</label>
+  <label *ngIf="!displayTitle">No Title</label>
+</div>
